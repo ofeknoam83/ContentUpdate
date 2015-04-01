@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ContentUpdate.FirstPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="40">
+			<StackLayout>
+				<Label Text="Server URL: " TextColor="Green"/>
+				<Entry x:Name="ServerUrlEntry" Text="ftp://waws-prod-am2-019.ftp.azurewebsites.windows.net/site/wwwroot" WidthRequest="100"/>
+			</StackLayout>
+			<StackLayout>
+				<Label Text="File name: " TextColor="Green"/>
+				<Entry x:Name="FileNameEntry" Text="noam.txt" WidthRequest="100"/>	
+			</StackLayout>
+			<StackLayout>
+				<Label Text="User name: " TextColor="Green"/>
+				<Entry x:Name="UserNameEntry" Text="RumblePhoneBook\ofeknoam83" WidthRequest="100"/>
+			</StackLayout>
+			<StackLayout>
+				<Label Text="Password: " TextColor="Green"/>
+				<Entry x:Name="PasswordEntry" Text="Furile30" WidthRequest="100"/>
+			</StackLayout>
+
+
+			<Button Text="Add item" Clicked="OnAddItemClicked"/>
+			<Button Text="Remove last item" Clicked="OnRemovedFirstItemClicked"/>
+
+			<Label x:Name="StatusLable" HorizontalOptions="Center"/>
+		</StackLayout> 
+	</ContentPage.Content>
+</ContentPage>
