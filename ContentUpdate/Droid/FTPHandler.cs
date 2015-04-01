@@ -3,11 +3,14 @@ using System.Net;
 using System.Text;
 using System.IO;
 using Xamarin.Forms;
-using ContentUpdate.Droid;
-
+using ContentUpdate.iOS;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 [assembly: Xamarin.Forms.Dependency (typeof (FTPHandler))]
-namespace ContentUpdate.Droid
+namespace ContentUpdate.iOS
 {
 
 	public class FTPHandler: IFTPHandler
@@ -114,6 +117,30 @@ namespace ContentUpdate.Droid
 		}
 
 
+		public async Task<bool> CreateChannel(string name, string title)
+		{
+			CategoryDto categoryDto = CategoryDto.GetCategoryDto (name, int.Parse(title));
+			string body = JsonConvert.SerializeObject (categoryDto);
+			string uri = "http://dashboardqa2.rumble.me/api2/Categories/PostCategories?pmtoken=0b6c30aa-5386-4395-88d6-9be8cf16b6f5";
+			StringContent content = new StringContent (body, Encoding.UTF8, "application/json");
+
+
+			using (HttpClient request = new HttpClient ()) 
+			{
+				try 
+				{
+					var result = await request.PostAsync(uri, content);
+					if (result.IsSuccessStatusCode)
+						return true;
+
+					return false;
+				} 
+				catch (Exception e) 
+				{
+					return false;
+				}
+			}
+		}
 
 	}
 }

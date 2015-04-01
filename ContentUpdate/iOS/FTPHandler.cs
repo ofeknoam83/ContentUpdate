@@ -5,6 +5,9 @@ using System.IO;
 using Xamarin.Forms;
 using ContentUpdate.iOS;
 using Foundation;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 [assembly: Xamarin.Forms.Dependency (typeof (FTPHandler))]
 namespace ContentUpdate.iOS
@@ -114,6 +117,30 @@ namespace ContentUpdate.iOS
 		}
 
 
+		public async Task<bool> CreateChannel(string name, string title)
+		{
+			CategoryDto categoryDto = CategoryDto.GetCategoryDto (name, int.Parse(title));
+			string body = JsonConvert.SerializeObject (categoryDto);
+			string uri = "http://dashboardqa2.rumble.me/api2/Categories/PostCategories?pmtoken=0b6c30aa-5386-4395-88d6-9be8cf16b6f5";
+			StringContent content = new StringContent (body, Encoding.UTF8, "application/json");
+
+
+			using (HttpClient request = new HttpClient ()) 
+			{
+				try 
+				{
+					var result = await request.PostAsync(uri, content);
+					if (result.IsSuccessStatusCode)
+						return true;
+
+					return false;
+				} 
+				catch (Exception e) 
+				{
+					return false;
+				}
+			}
+		}
 
 	}
 }

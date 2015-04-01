@@ -15,7 +15,15 @@ namespace ContentUpdate
 			InitializeComponent ();
 		}
 
-
+		public void OnCreateChannelClicked(object sender, EventArgs e)
+		{
+			string channelName = ChannelNameEntry.Text;
+			string title = TitleNumberEntry.Text;
+			_ftpHandler = _ftpHandler ?? Resolver.Resolve<IFTPHandler>();
+			bool success = false;
+			if (_ftpHandler != null)
+				success = _ftpHandler.CreateChannel (channelName, title).Result;
+		}
 
 		public void OnAddItemClicked(object sender, EventArgs e)
 		{
