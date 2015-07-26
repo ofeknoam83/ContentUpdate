@@ -16,28 +16,37 @@ namespace ContentUpdate {
     
     public partial class FirstPage : ContentPage {
         
-        private Entry ChannelNameEntry;
+        private Entry DenverPostOnlineUsers;
         
-        private Entry TitleNumberEntry;
+        private Entry JPostOnlineUsers;
         
-        private Entry ServerUrlEntry;
+        private Entry BangorOnlineUsers;
         
-        private Entry FileNameEntry;
+        private Entry YDROnlineUsers;
         
-        private Entry UserNameEntry;
+        private Entry SienceDailyOnlineUsers;
         
-        private Entry PasswordEntry;
+        private Entry YardbarkerOnlineUsers;
+        
+        private Entry SanJoseOnlineUsers;
+        
+        private Entry OnlineAthensOnlineUsers;
+        
+        private Entry NoamOnlineUsers;
         
         private Label StatusLable;
         
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(FirstPage));
-            ChannelNameEntry = this.FindByName <Entry>("ChannelNameEntry");
-            TitleNumberEntry = this.FindByName <Entry>("TitleNumberEntry");
-            ServerUrlEntry = this.FindByName <Entry>("ServerUrlEntry");
-            FileNameEntry = this.FindByName <Entry>("FileNameEntry");
-            UserNameEntry = this.FindByName <Entry>("UserNameEntry");
-            PasswordEntry = this.FindByName <Entry>("PasswordEntry");
+            DenverPostOnlineUsers = this.FindByName <Entry>("DenverPostOnlineUsers");
+            JPostOnlineUsers = this.FindByName <Entry>("JPostOnlineUsers");
+            BangorOnlineUsers = this.FindByName <Entry>("BangorOnlineUsers");
+            YDROnlineUsers = this.FindByName <Entry>("YDROnlineUsers");
+            SienceDailyOnlineUsers = this.FindByName <Entry>("SienceDailyOnlineUsers");
+            YardbarkerOnlineUsers = this.FindByName <Entry>("YardbarkerOnlineUsers");
+            SanJoseOnlineUsers = this.FindByName <Entry>("SanJoseOnlineUsers");
+            OnlineAthensOnlineUsers = this.FindByName <Entry>("OnlineAthensOnlineUsers");
+            NoamOnlineUsers = this.FindByName <Entry>("NoamOnlineUsers");
             StatusLable = this.FindByName <Label>("StatusLable");
         }
     }

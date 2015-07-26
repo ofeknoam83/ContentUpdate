@@ -1,15 +1,19 @@
-﻿<Properties StartupItem="iOS/ContentUpdate.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Adi’s iPhone" />
+﻿<Properties StartupItem="Droid/ContentUpdate.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.098baf670b96fa12" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Droid/FTPHandler.cs">
     <Files>
-      <File FileName="ContentUpdate/ContentUpdate.cs" Line="10" Column="4" />
-      <File FileName="ContentUpdate/FirstPage.xaml" Line="6" Column="49" />
-      <File FileName="ContentUpdate/FirstPage.xaml.cs" Line="45" Column="1" />
-      <File FileName="iOS/Main.cs" Line="23" Column="1" />
-      <File FileName="iOS/FTPHandler.cs" Line="84" Column="1" />
-      <File FileName="ContentUpdate/IFTPHandler.cs" Line="8" Column="4" />
-      <File FileName="Droid/FTPHandler.cs" Line="29" Column="49" />
-      <File FileName="Droid/MainActivity.cs" Line="27" Column="52" />
+      <File FileName="ContentUpdate/ContentUpdate.cs" Line="1" Column="1" />
+      <File FileName="ContentUpdate/FirstPage.xaml" Line="40" Column="24" />
+      <File FileName="ContentUpdate/FirstPage.xaml.cs" Line="48" Column="49" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="ContentUpdate/IFTPHandler.cs" Line="1" Column="1" />
+      <File FileName="Droid/FTPHandler.cs" Line="36" Column="4" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="ContentUpdate/Dtos/CategoryDto.cs" Line="1" Column="1" />
+      <File FileName="ContentUpdate/Dtos/FeedDto.cs" Line="1" Column="1" />
+      <File FileName="iOS/ParserHelper.cs" Line="1" Column="1" />
+      <File FileName="ContentUpdate/TitlesEnum.cs" Line="1" Column="1" />
+      <File FileName="iOS/FTPHandler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

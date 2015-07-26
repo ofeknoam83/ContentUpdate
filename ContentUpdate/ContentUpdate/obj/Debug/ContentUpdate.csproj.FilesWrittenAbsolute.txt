@@ -13,3 +13,13 @@
 /Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/XLabs.Platform.dll
 /Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/XLabs.Serialization.dll
 /Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/XLabs.Forms.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/mscorlib.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Core.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Linq.Queryable.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Diagnostics.Tools.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.ComponentModel.EventBasedAsync.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Net.Primitives.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Net.Requests.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Net.NetworkInformation.dll
+/Users/noammeirofek/ContentUpdate/ContentUpdate/ContentUpdate/bin/Debug/System.Text.RegularExpressions.dll

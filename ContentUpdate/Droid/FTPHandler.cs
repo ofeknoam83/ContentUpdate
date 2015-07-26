@@ -3,14 +3,15 @@ using System.Net;
 using System.Text;
 using System.IO;
 using Xamarin.Forms;
-using ContentUpdate.iOS;
+
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Net.Http;
+using System.Collections.Generic;
+using ContentUpdate.Droid;
 
 [assembly: Xamarin.Forms.Dependency (typeof (FTPHandler))]
-namespace ContentUpdate.iOS
+namespace ContentUpdate.Droid
 {
 
 	public class FTPHandler: IFTPHandler
@@ -20,6 +21,53 @@ namespace ContentUpdate.iOS
 
 		}
 
+		public Dictionary<TitlesEnum, string> GetOnLineUsers(string title)
+		{
+			Dictionary<TitlesEnum, string> xamarinInsightsDictionary = new Dictionary<TitlesEnum, string> ();
+			xamarinInsightsDictionary.Add (TitlesEnum.JPost, "165f7c49a1c725707bf6626feb3e15bc1dd088be");
+			xamarinInsightsDictionary.Add (TitlesEnum.TheDenverPost, "727115b05ab52221652d428856b48e71b0156145");
+			xamarinInsightsDictionary.Add (TitlesEnum.Bangor, "a2cb20b1398d5cfcf88608f72448ee21ad237f71");
+			xamarinInsightsDictionary.Add (TitlesEnum.YDR, "438f197d6ae106fbcd9e13ab45adbaf94abbac9e");
+			xamarinInsightsDictionary.Add (TitlesEnum.SienceDaily, "bdc2d2bb707eabf806cd090542e840dc0e6cc9df");
+			xamarinInsightsDictionary.Add (TitlesEnum.Yardbarker, "846dcbcd32ebf6e081f98d95fdcde82c0be2fa8f");
+			xamarinInsightsDictionary.Add (TitlesEnum.SanJoseMercury, "2b9f490f398479f0fb5241ba03bc04f4d51dc925");
+			xamarinInsightsDictionary.Add (TitlesEnum.OnlineAthens, "5763cc094c1370e625b7e2946dcc7a406254a2da");
+			xamarinInsightsDictionary.Add (TitlesEnum.Noam, "6efb85137e1649cd3d89aba8600c2d79e5471add");
+
+
+
+
+			var resultDictionary = new Dictionary<TitlesEnum, string>();
+
+			using (WebClient request = new WebClient())
+			{
+				string URI = "https://insights.xamarin.com/api/login";
+				string parameters = "email=noamo@rumble.me&password=Rumble2012";
+
+				request.Headers.Add("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+				request.Headers.Add("Accept", "application/json, text/javascript, */*; q=0.01");
+
+				request.Headers.Add("Accept-Language", "en-US,en;q=0.8,he;q=0.6");
+
+				request.Headers.Add("Host", "insights.xamarin.com");
+				request.Headers.Add("Origin", "https://insights.xamarin.com");
+				request.Headers.Add("Referer", "https://insights.xamarin.com/login?return=%2f");
+				request.Headers.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36");
+				request.Headers.Add("X-Requested-With", "XMLHttpRequest");
+
+				var result = request.UploadString(URI, parameters);
+				request.Headers.Add("Cookie", request.ResponseHeaders["Set-Cookie"]);
+
+				foreach (var item in xamarinInsightsDictionary)
+				{
+					string titleUrl = "https://insights.xamarin.com/api/applications/" + item.Value + "/active";
+					var numberOfOnlineUsers = request.DownloadString(titleUrl);
+					resultDictionary.Add(item.Key, numberOfOnlineUsers);
+				}
+
+			}
+			return resultDictionary;
+		}
 		public bool AddItemToFeed(string textToAdd, string fileUrl, string userName, string password)
 		{
 

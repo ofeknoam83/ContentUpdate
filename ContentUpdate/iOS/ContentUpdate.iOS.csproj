@@ -164,6 +164,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="FTPHandler.cs" />
+    <Compile Include="ParserHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="ITunesArtwork" />
